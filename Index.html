@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PLO MAIMA CIVIC | Know. Question. Participate.</title>
+
+<meta name="description"
+      content="PLO MAIMA CIVIC — Civic information, leadership accountability, community issues and public participation.">
+
+<style>
+/* =========================================================
+   PLO MAIMA CIVIC
+   SINGLE-FILE VERSION
+   HTML + CSS + JAVASCRIPT
+========================================================= */
+
+:root{
+    --green:#0B5D3B;
+    --dark:#073b27;
+    --yellow:#F2C94C;
+    --light:#EAF5EF;
+    --white:#ffffff;
+    --black:#111111;
+    --gray:#667085;
+    --light-gray:#f5f7f6;
+    --border:#dfe7e2;
+    --danger:#c0392b;
+    --success:#198754;
+    --shadow:0 8px 30px rgba(0,0,0,.08);
+    --radius:14px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--black);
+    background:#fff;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--white);
+    border-bottom:1px solid var(--border);
+}
+
+.topbar{
+    background:var(--dark);
+    color:white;
+    padding:7px 0;
+    font-size:13px;
+}
+
+.topbar-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.navbar{
+    min-height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    font-size:21px;
+    color:var(--green);
+}
+
+.logo-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-weight:bold;
+    border:4px solid var(--yellow);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#26352e;
+}
+
+.nav-links a:hover{
+    color:var(--green);
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-block;
+    padding:11px 18px;
+    border-radius:8px;
+    border:1px solid transparent;
+    cursor:pointer;
+    font-weight:700;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:var(--green);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--dark);
+}
+
+.btn-yellow{
+    background:var(--yellow);
+    color:#111;
+}
+
+.btn-outline{
+    border-color:var(--green);
+    color:var(--green);
+    background:white;
+}
+
+.btn-danger{
+    background:var(--danger);
+    color:white;
+}
+
+.btn-small{
+    padding:7px 12px;
+    font-size:13px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:
+        linear-gradient(rgba(5,49,32,.88),rgba(5,49,32,.88)),
+        url("images/hero.jpg") center/cover;
+    color:white;
+    min-height:620px;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero-label{
+    display:inline-block;
+    background:rgba(242,201,76,.15);
+    border:1px solid var(--yellow);
+    color:var(--yellow);
+    padding:7px 13px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,76px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--yellow);
+}
+
+.hero p{
+    font-size:20px;
+    max-width:700px;
+    color:#e8f1ec;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:75px 0;
+}
+
+.section-light{
+    background:var(--light-gray);
+}
+
+.section-green{
+    background:var(--green);
+    color:white;
+}
+
+.section-title{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 45px;
+}
+
+.section-title h2{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+.section-green .section-title p{
+    color:#dcebe3;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.grid{
+    display:grid;
+    gap:22px;
+}
+
+.grid-2{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.grid-3{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--gray);
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    border-radius:12px;
+    background:var(--light);
+    display:grid;
+    place-items:center;
+    color:var(--green);
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    margin-top:-55px;
+    position:relative;
+    z-index:5;
+}
+
+.stat-card{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+}
+
+.stat-number{
+    font-size:34px;
+    font-weight:900;
+    color:var(--green);
+}
+
+/* =========================
+   LEADERS
+========================= */
+
+.leader-card{
+    overflow:hidden;
+    padding:0;
+}
+
+.leader-photo{
+    height:220px;
+    background:var(--light);
+    display:grid;
+    place-items:center;
+    color:var(--green);
+    font-size:60px;
+}
+
+.leader-body{
+    padding:20px;
+}
+
+.position{
+    color:var(--green);
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* =========================
+   PROMISE TRACKER
+========================= */
+
+.promise{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.status{
+    display:inline-block;
+    width:max-content;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.status.completed{
+    background:#dff5e8;
+    color:#13733b;
+}
+
+.status.ongoing{
+    background:#fff4cf;
+    color:#856404;
+}
+
+.status.pending{
+    background:#fbe2df;
+    color:#a12b20;
+}
+
+.status.changed{
+    background:#e2e9f9;
+    color:#244b92;
+}
+
+/* =========================
+   ISSUES
+========================= */
+
+.issue-card{
+    position:relative;
+}
+
+.issue-tag{
+    color:var(--green);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.issue-card h3{
+    margin:7px 0;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-card{
+    overflow:hidden;
+    padding:0;
+}
+
+.news-image{
+    height:190px;
+    background:var(--light);
+    display:grid;
+    place-items:center;
+    color:var(--green);
+    font-size:45px;
+}
+
+.news-body{
+    padding:20px;
+}
+
+.news-date{
+    color:var(--gray);
+    font-size:13px;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.event-card{
+    border-left:5px solid var(--green);
+}
+
+.event-date{
+    color:var(--green);
+    font-weight:bold;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,
+td{
+    padding:14px;
+    border-bottom:1px solid var(--border);
+    text-align:left;
+}
+
+th{
+    background:var(--green);
+    color:white;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-group{
+    margin-bottom:17px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #ccd7d0;
+    border-radius:8px;
+    outline:none;
+    background:white;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:var(--green);
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.search-box input{
+    flex:1;
+}
+
+/* =========================
+   MEDIA
+========================= */
+
+.media-box{
+    height:220px;
+    border-radius:var(--radius);
+    background:var(--dark);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-size:50px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:var(--yellow);
+    padding:45px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#062f20;
+    color:white;
+    padding:55px 0 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+footer h3{
+    color:var(--yellow);
+    margin-bottom:15px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:8px;
+    color:#d3e1da;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:35px;
+    padding-top:20px;
+    text-align:center;
+    color:#cbd8d1;
+    font-size:13px;
+}
+
+/* =========================
+   ADMIN PANEL
+========================= */
+
+.admin-panel{
+    display:none;
+    background:#101915;
+    color:white;
+    padding:50px 0;
+}
+
+.admin-panel.active{
+    display:block;
+}
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.admin-card{
+    background:#17241e;
+    border:1px solid #294238;
+    padding:20px;
+    border-radius:12px;
+}
+
+.admin-card h3{
+    color:var(--yellow);
+}
+
+.admin-actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.notification{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:var(--dark);
+    color:white;
+    padding:15px 20px;
+    border-radius:8px;
+    box-shadow:var(--shadow);
+    display:none;
+    z-index:2000;
+}
+
+.notification.show{
+    display:block;
+}
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden{
+    display:none!important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+        border-bottom:1px solid var(--border);
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .grid-4{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    section{
+        padding:55px 0;
+    }
+
+    .hero{
+        min-height:550px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .admin-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        margin-top:-30px;
+    }
+
+    .topbar-content{
+        flex-direction:column;
+        gap:2px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+    <div class="container topbar-content">
+        <span>Independent Civic Information Platform</span>
+        <span>Document. Inform. Engage. Follow Up.</span>
+    </div>
+</div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="container navbar">
+
+    <a href="#home" class="logo">
+        <span class="logo-icon">PM</span>
+        <span>PLO MAIMA CIVIC</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="#home">Home</a></li>
+        <li><a href="#leaders">Leaders</a></li>
+        <li><a href="#issues">Issues</a></li>
+        <li><a href="#promises">Promise Tracker</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<main id="home">
+
+<section class="hero">
+
+<div class="container">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            CIVIC INFORMATION • PUBLIC PARTICIPATION
+        </span>
+
+        <h1>
+            Know.<br>
+            <span>Question.</span><br>
+            Participate.
+        </h1>
+
+        <p>
+            PLO MAIMA CIVIC is a civic information platform focused on
+            leadership accountability, community issues, public participation
+            and documenting what happens in our communities.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#leaders" class="btn btn-yellow">
+                Explore Leaders
+            </a>
+
+            <a href="#issues" class="btn btn-outline">
+                Community Issues
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="grid grid-4">
+
+    <div class="stat-card">
+        <div class="stat-number" id="leaderCount">0</div>
+        <p>Leaders Tracked</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number" id="promiseCount">0</div>
+        <p>Promises Tracked</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number" id="issueCount">0</div>
+        <p>Community Issues</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number" id="eventCount">0</div>
+        <p>Events</p>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY CIVIC
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>What We Do</h2>
+
+    <p>
+        We organize public information so citizens can understand,
+        question and participate in civic affairs.
+    </p>
+
+</div>
+
+<div class="grid grid-3">
+
+    <div class="card">
+
+        <div class="icon">📋</div>
+
+        <h3>Document</h3>
+
+        <p>
+            Record projects, public statements, commitments,
+            community concerns and available evidence.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="icon">🔎</div>
+
+        <h3>Inform</h3>
+
+        <p>
+            Make important civic information easier for ordinary
+            citizens to find and understand.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="icon">🤝</div>
+
+        <h3>Engage</h3>
+
+        <p>
+            Create opportunities for citizens to raise issues,
+            participate in discussions and follow public affairs.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LEADERS
+===================================================== -->
+
+<section id="leaders" class="section-light">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Leaders</h2>
+
+    <p>
+        Public information about elected and other public leaders,
+        their roles, activities and documented public commitments.
+    </p>
+
+</div>
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="leaderSearch"
+        placeholder="Search leader, position or location..."
+    >
+
+</div>
+
+<div class="grid grid-3" id="leadersContainer"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROMISE TRACKER
+===================================================== -->
+
+<section id="promises">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Promise Tracker</h2>
+
+    <p>
+        Track public commitments and the available evidence about
+        their current status.
+    </p>
+
+</div>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+    <th>Commitment</th>
+    <th>Leader</th>
+    <th>Status</th>
+    <th>Evidence</th>
+</tr>
+
+</thead>
+
+<tbody id="promisesContainer"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     COMMUNITY ISSUES
+===================================================== -->
+
+<section id="issues" class="section-light">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Community Issues</h2>
+
+    <p>
+        Issues raised by citizens and documented for public discussion
+        and follow-up.
+    </p>
+
+</div>
+
+<div class="grid grid-3" id="issuesContainer"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PEOPLE'S VOICE
+===================================================== -->
+
+<section id="voice">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>People's Voice</h2>
+
+    <p>
+        Share a community concern, idea, question or civic experience.
+    </p>
+
+</div>
+
+<div class="grid grid-2">
+
+<div class="card">
+
+<h3>Submit Your Voice</h3>
+
+<form id="voiceForm">
+
+<div class="form-group">
+
+<label>Name</label>
+
+<input
+    type="text"
+    id="voiceName"
+    placeholder="Your name"
+    required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Location</label>
+
+<input
+    type="text"
+    id="voiceLocation"
+    placeholder="County / Ward / Area"
+    required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Message</label>
+
+<textarea
+    id="voiceMessage"
+    placeholder="What would you like to raise?"
+    required
+></textarea>
+
+</div>
+
+<button class="btn btn-primary" type="submit">
+    Submit Voice
+</button>
+
+</form>
+
+</div>
+
+
+<div class="card">
+
+<h3>Our Approach</h3>
+
+<p>
+    People's submissions may be reviewed before publication.
+    Personal information should only be submitted when necessary.
+</p>
+
+<br>
+
+<p>
+    The platform aims to distinguish between verified information,
+    citizen reports, public statements and unresolved claims.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NEWS
+===================================================== -->
+
+<section id="news" class="section-light">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Civic News</h2>
+
+    <p>
+        Civic developments, public participation information and
+        community updates.
+    </p>
+
+</div>
+
+<div class="grid grid-3" id="newsContainer"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section id="events">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Events</h2>
+
+    <p>
+        Public forums, community meetings, civic education activities
+        and other events.
+    </p>
+
+</div>
+
+<div class="grid grid-3" id="eventsContainer"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MEDIA
+===================================================== -->
+
+<section id="media" class="section-light">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Media</h2>
+
+    <p>
+        Photos, videos, interviews and other civic documentation.
+    </p>
+
+</div>
+
+<div class="grid grid-3">
+
+    <div class="media-box">▶</div>
+
+    <div class="media-box">📷</div>
+
+    <div class="media-box">🎙</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==========================
